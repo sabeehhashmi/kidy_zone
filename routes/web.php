@@ -10,3 +10,5 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/home-new',[App\Http\Controllers\HomeController::class,'index']);
