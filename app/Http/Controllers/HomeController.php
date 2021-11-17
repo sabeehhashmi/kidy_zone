@@ -18,6 +18,8 @@ class HomeController extends Controller
         $sale_products = ProductAttributeValue::where('attribute_id', 13)->where('float_value','!=','')->with('product.ratings','product.images','product.attributes')->get();
         $ages = Category::where('parent_id',2)->with('transalation')->get();
         $categories = Category::where('parent_id',5)->with('transalation')->get();
-        return view('home', compact('sale_products','ages','categories'));
+        $products = ProductAttributeValue::where('attribute_id', 11)->where('float_value','!=','')->with('product.ratings','product.images','product.attributes')->get();
+        //return $products;
+        return view('home', compact('sale_products','ages','categories','products'));
     }
 }
